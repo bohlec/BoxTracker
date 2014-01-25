@@ -1,0 +1,17 @@
+<div id="user_selector">
+
+<a href="#" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="cancel ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-hover-c"><span class="ui-btn-inner"><span class="ui-btn-text">Cancel</span></span></a>
+
+	<table id="users">
+		{{#users}}
+			<tr>
+				<td>{{name}}</td>
+				<td>
+
+<a href="#" data-id="{{_id.$oid}}" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="select ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-hover-c"><span class="ui-btn-inner"><span class="ui-btn-text">Select</span></span></a>
+
+				</td>
+			</tr>
+		{{/users}}
+	</table>
+</div>

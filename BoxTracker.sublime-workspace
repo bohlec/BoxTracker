@@ -1,0 +1,669 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"prevent",
+				"preventDefault"
+			],
+			[
+				"user_sel",
+				"user_selection_panel"
+			],
+			[
+				"model_C",
+				"model_cachedModel"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/index.htm",
+			"settings":
+			{
+				"buffer_size": 365,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/main.js",
+			"settings":
+			{
+				"buffer_size": 2618,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/models/user.js",
+			"settings":
+			{
+				"buffer_size": 2769,
+				"line_ending": "Unix",
+				"name": "/**"
+			}
+		},
+		{
+			"file": "src/js/models/box.js",
+			"settings":
+			{
+				"buffer_size": 737,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/controllers/pages.js",
+			"settings":
+			{
+				"buffer_size": 751,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/controllers/pages/box.js",
+			"settings":
+			{
+				"buffer_size": 2377,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/controllers/scheduler.js",
+			"settings":
+			{
+				"buffer_size": 3058,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/controllers/user_selector.js",
+			"settings":
+			{
+				"buffer_size": 1035,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/css/styles.css",
+			"settings":
+			{
+				"buffer_size": 496,
+				"line_ending": "Unix",
+				"name": "/* Box Page */"
+			}
+		},
+		{
+			"file": "src/views/user_selector.mustache",
+			"settings":
+			{
+				"buffer_size": 787,
+				"line_ending": "Unix",
+				"name": "<div id=\"user_selector\">"
+			}
+		},
+		{
+			"file": "src/views/scheduler.mustache",
+			"settings":
+			{
+				"buffer_size": 2077,
+				"line_ending": "Unix",
+				"name": "<div class=\"schedule_wrapper\">"
+			}
+		},
+		{
+			"contents": "<div class=\"class_wrapper\">\n	<div class=\"left\">\n		<a href=\"#\" data-role=\"button\" data-icon=\"arrow-l\" data-iconpos=\"notext\" data-theme=\"c\" data-inline=\"true\" data-corners=\"true\" data-shadow=\"true\" data-iconshadow=\"true\" data-wrapperels=\"span\" title=\"Arrow left\" class=\"previous_class ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext ui-btn-up-c\"><span class=\"ui-btn-inner\"><span class=\"ui-btn-text\">Arrow left</span><span class=\"ui-icon ui-icon-arrow-l ui-icon-shadow\">&nbsp;</span></span></a>\n	</div>\n<div class=\"\">\n	Class: {{#format_date classReservation.date_time}}<br>\n	Total Spaces: {{classReservation.slots}}\n</div>\n<div class=\"right\">\n	<a href=\"#\" data-role=\"button\" data-icon=\"arrow-r\" data-iconpos=\"notext\" data-theme=\"c\" data-inline=\"true\" data-corners=\"true\" data-shadow=\"true\" data-iconshadow=\"true\" data-wrapperels=\"span\" title=\"Arrow right\" class=\"next_class ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext ui-btn-up-c\"><span class=\"ui-btn-inner\"><span class=\"ui-btn-text\">Arrow right</span><span class=\"ui-icon ui-icon-arrow-r ui-icon-shadow\">&nbsp;</span></span></a>\n</div>\n</div>\n<div class=\"schedule_wrapper\">\n	<table id=\"schedule_table\">\n		{{#each users}}\n			<tr>\n				<td>{{name}}</td>\n				<td>\n<a href=\"#\" data-id=\"{{_id.$oid}}\" data-role=\"button\" data-inline=\"true\" data-corners=\"true\" data-shadow=\"true\" data-iconshadow=\"true\" data-wrapperels=\"span\" data-theme=\"c\" class=\"remove ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-hover-c\"><span class=\"ui-btn-inner\"><span class=\"ui-btn-text\">Remove</span></span></a>\n				</td>\n			</tr>\n		{{/each}}\n		{{#emptyUserList users classReservation.slots}}\n			<tr>\n				<td>Empty Slot</td>\n				<td>\n<a href=\"#\" data-role=\"button\" data-inline=\"true\" data-corners=\"true\" data-shadow=\"true\" data-iconshadow=\"true\" data-wrapperels=\"span\" data-theme=\"c\" class=\"register ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-hover-c\"><span class=\"ui-btn-inner\"><span class=\"ui-btn-text\">Register!</span></span></a>\n				</td>\n			</tr>\n		{{/emptyUserList}}\n	</table>\n</div>\n",
+			"settings":
+			{
+				"buffer_size": 2073,
+				"line_ending": "Unix",
+				"name": "<div class=\"class_wrapper\">"
+			}
+		},
+		{
+			"file": "models.txt",
+			"settings":
+			{
+				"buffer_size": 1045,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/js/router.js",
+			"settings":
+			{
+				"buffer_size": 488,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/bohlec/Sites/BoxTracker/src/js/lib/datejs/date.js",
+		"/Users/bohlec/Sites/BoxTracker/src/js/models/reservation.js",
+		"/Users/bohlec/Sites/BoxTracker/data/import/users.txt",
+		"/Users/bohlec/Sites/BoxTracker/src/js/router.js",
+		"/Users/bohlec/Sites/BoxTracker/src/views/content.mustache",
+		"/Users/bohlec/Sites/BoxTracker/src/views/box.mustache",
+		"/Users/bohlec/Sites/BoxTracker/src/js/lib/canjs-2.0.0/amd/can/util/fixture.js",
+		"/Users/bohlec/Sites/BoxTracker/src/js/models/schedule.js",
+		"/Users/bohlec/Sites/BoxTracker/.jshintignore",
+		"/Users/bohlec/Sites/BoxTracker/src/js/lib/canjs-2.0.0/amd/can.js",
+		"/Users/bohlec/Sites/BoxTracker/src/views/box/header.mustache",
+		"/Users/bohlec/Sites/BoxTracker/src/js/controllers/pages/entry.js",
+		"/Users/bohlec/Sites/BoxTracker/models.txt",
+		"/Users/bohlec/Sites/BoxTracker/Gruntfile.js",
+		"/Users/bohlec/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"matcher",
+			"names",
+			"matchingPartOfURL",
+			"overwrite",
+			"view_box_header",
+			"func_locations",
+			"setUserSelection"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"func_location"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 7,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/index.htm",
+					"settings":
+					{
+						"buffer_size": 365,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								246,
+								246
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/js/main.js",
+					"settings":
+					{
+						"buffer_size": 2618,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1959,
+								1959
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 564.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/js/models/user.js",
+					"settings":
+					{
+						"buffer_size": 2769,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								614,
+								614
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/**",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/js/models/box.js",
+					"settings":
+					{
+						"buffer_size": 737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								337,
+								337
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/js/controllers/pages.js",
+					"settings":
+					{
+						"buffer_size": 751,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								73,
+								73
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/js/controllers/pages/box.js",
+					"settings":
+					{
+						"buffer_size": 2377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								249,
+								249
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/js/controllers/scheduler.js",
+					"settings":
+					{
+						"buffer_size": 3058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2077,
+								2077
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 666.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/js/controllers/user_selector.js",
+					"settings":
+					{
+						"buffer_size": 1035,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								91,
+								91
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "src/css/styles.css",
+					"settings":
+					{
+						"buffer_size": 496,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								495,
+								495
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/* Box Page */",
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "src/views/user_selector.mustache",
+					"settings":
+					{
+						"buffer_size": 787,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								438,
+								438
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<div id=\"user_selector\">",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "src/views/scheduler.mustache",
+					"settings":
+					{
+						"buffer_size": 2077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								573,
+								573
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<div class=\"schedule_wrapper\">",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"settings":
+					{
+						"buffer_size": 2073,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2073,
+								2073
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<div class=\"class_wrapper\">",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "models.txt",
+					"settings":
+					{
+						"buffer_size": 1045,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								476,
+								476
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "src/js/router.js",
+					"settings":
+					{
+						"buffer_size": 488,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								488,
+								488
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"fixtures",
+				"src/js/lib/canjs-2.0.0/amd/can/util/fixture.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true
+}

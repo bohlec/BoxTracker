@@ -1,0 +1,4 @@
+src/js/lib/**
+src/js/config.js
+src/example/**
+src/js/controllers/pages/box.js

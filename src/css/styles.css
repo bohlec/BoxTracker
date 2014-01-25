@@ -1,0 +1,37 @@
+#content {
+	padding: 0 15px;
+}
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+/* Box Page */
+#header {
+	text-align: center;
+	padding: 20px 0;
+	font-size: 24px;
+	font-weight: bold;
+}
+#signup {
+	text-align: center;
+	padding: 20px 0;
+}
+#schedule_table {
+	width: 100%;
+	border: 1px solid #CCC;
+}
+.class_wrapper {
+	background-color: #777;
+	color: white;
+	padding: 5px;
+}
+#clock {
+	font-size: 20px;
+	font-weight: bold;
+}
+/* User Selector */
+.schedule_wrapper.active #schedule_table {
+	display:none;
+}

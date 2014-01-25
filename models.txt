@@ -1,0 +1,76 @@
+{box:
+	id: Integer,
+	name: String,
+	url: String,
+	classes: {
+		id: Integer,
+		date_time: Date,
+		slots: Integer
+	}
+}
+
+// User type = 1/Athlete, 2/Owner, 3/Box, 4/Admin
+{user:
+	id: integer,
+	name: String,
+	box: {id: Integer, name: String},
+	userType: Integer,
+	subscriptionType: {
+		id: integer,
+		description: String,
+		subscription: {
+			value: Integer,
+			unit: String
+		}
+	},
+	reservations: {
+		id: Integer,
+		dateCreated: Date,
+		dateUpdated: Date,
+		classId: Integer
+	}
+}
+
+
+-------------------------
+
+{box:
+	id: Integer,
+	name: String,
+	url: String,
+	scheduleId: Integer
+}
+
+// User type = 1/Athlete, 2/Owner, 3/Box, 4/Admin
+{user:
+	id: integer,
+	name: String,
+	box: {id: Integer, name: String},
+	subscriptionType: {
+		id: integer,
+		description: String,
+		subscription: {
+			value: Integer,
+			unit: String
+		}
+	},
+	userType: Integer
+}
+
+{schedule:
+	boxId: Integer
+	classes: {
+		id: Integer,
+		date_time: Date,
+		slots: Integer
+	}
+}
+
+{reservation:
+	id: Integer,
+	dateCreated: Date,
+	dateUpdated: Date,
+	classId: Integer,
+	userId: Integer
+}
+

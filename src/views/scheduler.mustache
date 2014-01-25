@@ -1,0 +1,32 @@
+<div class="class_wrapper">
+	<div class="left">
+		<a href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Arrow left" class="previous_class ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Arrow left</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow">&nbsp;</span></span></a>
+	</div>
+<div class="">
+	Class: {{#formatdate classReservation}}{{/formatdate}}<br>
+	Total Spaces: {{classReservation.slots}}
+</div>
+<div class="right">
+	<a href="#" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Arrow right" class="next_class ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Arrow right</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
+</div>
+</div>
+<div class="schedule_wrapper">
+	<table id="schedule_table">
+		{{#each users}}
+			<tr>
+				<td>{{name}}</td>
+				<td>
+<a href="#" data-id="{{_id.$oid}}" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="remove ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-hover-c"><span class="ui-btn-inner"><span class="ui-btn-text">Remove</span></span></a>
+				</td>
+			</tr>
+		{{/each}}
+		{{#emptyUserList users classReservation.slots}}
+			<tr>
+				<td>Empty Slot</td>
+				<td>
+<a href="#" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="register ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-hover-c"><span class="ui-btn-inner"><span class="ui-btn-text">Register!</span></span></a>
+				</td>
+			</tr>
+		{{/emptyUserList}}
+	</table>
+</div>
