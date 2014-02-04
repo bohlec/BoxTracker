@@ -1,12 +1,6 @@
 #content {
 	padding: 0 15px;
 }
-.left {
-	float:left;
-}
-.right {
-	float:right;
-}
 /* Box Page */
 #header {
 	text-align: center;
@@ -26,12 +20,29 @@
 	background-color: #777;
 	color: white;
 	padding: 5px;
+	position: relative;
+}
+.class_wrapper .left {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.class_wrapper .right {
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 #clock {
 	font-size: 20px;
 	font-weight: bold;
 }
 /* User Selector */
-.schedule_wrapper.active #schedule_table {
+.isConfirmed_text, #schedule_table tr.isConfirmed .confirm.ui-btn {
 	display:none;
+}
+#schedule_table tr.isConfirmed span.isConfirmed_text {
+	display:initial;
+}
+#schedule_table tr .confirm.ui-btn {
+	display:inline-block;
 }

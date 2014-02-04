@@ -38,6 +38,7 @@ define([
 		remove: function () {
 			//this.element.toggleClass('active');
 			//$('#user_selector').remove();
+			$.colorbox.close();
 		}
 	});
 });

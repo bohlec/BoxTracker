@@ -13,34 +13,69 @@ define([
 				url: 'https://api.mongolab.com/api/1/databases/boxtracker/collections/users?q=' + JSON.stringify(params) + '&apiKey=cCxWbdpuy2PFLqrTd1EsiV_NnljB0_GF',
 				type: 'GET'
 			});
-		},
-		cancelReservation: function (user, klass) {
-			can.each(user.reservations, function (element, index) {
+		}
+	},
+	// Instance methods
+	{
+		cancelReservation: function (klass) {
+			var idx;
+			can.each(this.reservations, function (element, index) {
 				if (element.classId === klass.id) {
-					user.reservations.splice(index, 1);
+					idx = index;
+					return false;
 				}
 			});
+			if (idx) {
+				this.reservations.splice(idx, 1);
+			}
 			return can.ajax({
-				url: 'https://api.mongolab.com/api/1/databases/boxtracker/collections/users/' + user._id.$oid + '?apiKey=cCxWbdpuy2PFLqrTd1EsiV_NnljB0_GF',
-				data: JSON.stringify({'$set': {'reservations': user.reservations.serialize()}}),
+				url: 'https://api.mongolab.com/api/1/databases/boxtracker/collections/users/' + this._id.$oid + '?apiKey=cCxWbdpuy2PFLqrTd1EsiV_NnljB0_GF',
+				data: JSON.stringify({'$set': {'reservations': this.reservations.serialize()}}),
 				type: 'PUT',
 				contentType: 'application/json'
 			});
 		},
-		makeReservation: function (user, klass) {
-			user.reservations.push({
+		getReservation: function (klass) {
+			for (var i = 0; i < this.reservations.length; i++) {
+				if (this.reservations[i].classId === klass.id) {
+					return this.reservations[i];
+				}
+			}
+		},
+		makeReservation: function (klass, isConfirmed) {
+			this.reservations.push({
 				dateCreated: new Date(),
 				dateUpdated: new Date(),
-				classId: klass.id
+				classId: klass.id,
+				isConfirmed: (typeof(isConfirmed) !== 'undefined' && isConfirmed)
 			});
 			return can.ajax({
-				url: 'https://api.mongolab.com/api/1/databases/boxtracker/collections/users/' + user._id.$oid + '?apiKey=cCxWbdpuy2PFLqrTd1EsiV_NnljB0_GF',
-				data: JSON.stringify({'$set': {'reservations': user.reservations.serialize()}}),
+				url: 'https://api.mongolab.com/api/1/databases/boxtracker/collections/users/' + this._id.$oid + '?apiKey=cCxWbdpuy2PFLqrTd1EsiV_NnljB0_GF',
+				data: JSON.stringify({'$set': {'reservations': this.reservations.serialize()}}),
+				type: 'PUT',
+				contentType: 'application/json'
+			});
+		},
+		updateReservation: function (reservation) {
+			for (var i = 0; i < this.reservations.length; i++) {
+				if (this.reservations[i].classId === reservation.classId) {
+					this.reservations[i].attr('dateUpdated', new Date());
+				}
+			}
+			return can.ajax({
+				url: 'https://api.mongolab.com/api/1/databases/boxtracker/collections/users/' + this._id.$oid + '?apiKey=cCxWbdpuy2PFLqrTd1EsiV_NnljB0_GF',
+				data: JSON.stringify({'$set': {'reservations': this.reservations.serialize()}}),
 				type: 'PUT',
 				contentType: 'application/json'
 			});
 		}
-	}, {});
+	});
+
+	User.List = can.Model.List({
+		'change': function (e) {
+			window.console.log('List changed: ' + e);
+		}
+	});
 
 	return User;
 

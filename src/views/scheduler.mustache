@@ -13,9 +13,11 @@
 <div class="schedule_wrapper">
 	<table id="schedule_table">
 		{{#each users}}
-			<tr>
-				<td>{{name}}</td>
+			<tr class="{{#isConfirmed this classReservation}}isConfirmed{{/isConfirmed}}">
+				<td><span class="name">{{name}}</span> <span class="isConfirmed_text">(Checked in!)</span></td>
 				<td>
+<a href="#" data-id="{{_id.$oid}}" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="confirm ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-hover-c"><span class="ui-btn-inner"><span class="ui-btn-text">Check-in</span></span></a>
+
 <a href="#" data-id="{{_id.$oid}}" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="remove ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-hover-c"><span class="ui-btn-inner"><span class="ui-btn-text">Remove</span></span></a>
 				</td>
 			</tr>
