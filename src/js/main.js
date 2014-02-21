@@ -40,6 +40,7 @@ requirejs.config({
 
 		/* Pages */
 		page_box: 'js/controllers/pages/box',
+		page_user: 'js/controllers/pages/user',
 
 		/* Models */
 		model_user: 'js/models/user',
@@ -49,8 +50,9 @@ requirejs.config({
 
 		/* Views */
 		view_content: 'views/content.mustache',
-		view_footer: 'views/footer.mustache',
+		//view_footer: 'views/footer.mustache',
 		view_box: 'views/box.mustache',
+		view_user: 'views/user.mustache',
 		view_scheduler: 'views/scheduler.mustache',
 		view_user_selector: 'views/user_selector.mustache'
 	}

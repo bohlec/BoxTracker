@@ -7,7 +7,12 @@ define([
 	'use strict';
 
 	var User = can.Model.extend({
-		findOne: 'GET https://api.mongolab.com/api/1/databases/boxtracker/collections/users/{_id}?apiKey=cCxWbdpuy2PFLqrTd1EsiV_NnljB0_GF',
+		findOne: function (params) {
+			return can.ajax({
+				url: 'https://api.mongolab.com/api/1/databases/boxtracker/collections/users/' + params.id + '?apiKey=cCxWbdpuy2PFLqrTd1EsiV_NnljB0_GF',
+				type: 'GET'
+			});
+		},
 		findAll: function (params) {
 			return can.ajax({
 				url: 'https://api.mongolab.com/api/1/databases/boxtracker/collections/users?q=' + JSON.stringify(params) + '&apiKey=cCxWbdpuy2PFLqrTd1EsiV_NnljB0_GF',
@@ -35,6 +40,24 @@ define([
 				contentType: 'application/json'
 			});
 		},
+		getFutureReservations: function () {
+			var futures = [];
+			for (var i = 0; i < this.reservations.length; i++) {
+				if (new Date(this.reservations[i].date_time) >= new Date()) {
+					futures.push(this.reservations[i]);
+				}
+			}
+			return futures;
+		},
+		getPastReservations: function () {
+			var past = [];
+			for (var i = 0; i < this.reservations.length; i++) {
+				if (new Date(this.reservations[i].date_time) <= new Date() && this.reservations[i].isConfirmed) {
+					past.push(this.reservations[i]);
+				}
+			}
+			return past;
+		},
 		getReservation: function (klass) {
 			for (var i = 0; i < this.reservations.length; i++) {
 				if (this.reservations[i].classId === klass.id) {
@@ -47,6 +70,7 @@ define([
 				dateCreated: new Date(),
 				dateUpdated: new Date(),
 				classId: klass.id,
+				classDate: klass.date_time,
 				isConfirmed: (typeof(isConfirmed) !== 'undefined' && isConfirmed)
 			});
 			return can.ajax({

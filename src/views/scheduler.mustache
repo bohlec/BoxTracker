@@ -4,7 +4,10 @@
 	</div>
 <div class="">
 	Class: {{#formatdate classReservation}}{{/formatdate}}<br>
+
+	Class Size: {{users.length}}
 	Total Spaces: {{classReservation.slots}}
+
 </div>
 <div class="right">
 	<a href="#" data-role="button" data-icon="arrow-r" data-iconpos="notext" data-theme="c" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" title="Arrow right" class="next_class ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-icon-notext ui-btn-up-c"><span class="ui-btn-inner"><span class="ui-btn-text">Arrow right</span><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></span></a>
@@ -14,15 +17,16 @@
 	<table id="schedule_table">
 		{{#each users}}
 			<tr class="{{#isConfirmed this classReservation}}isConfirmed{{/isConfirmed}}">
-				<td><span class="name">{{name}}</span> <span class="isConfirmed_text">(Checked in!)</span></td>
+				<td><a href="#!user/{{_id.$oid}}" class="name">{{name}}</a> <span class="isConfirmed_text">(Checked in!)</span></td>
 				<td>
 <a href="#" data-id="{{_id.$oid}}" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="confirm ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-hover-c"><span class="ui-btn-inner"><span class="ui-btn-text">Check-in</span></span></a>
 
 <a href="#" data-id="{{_id.$oid}}" data-role="button" data-inline="true" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" class="remove ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-hover-c"><span class="ui-btn-inner"><span class="ui-btn-text">Remove</span></span></a>
+
 				</td>
 			</tr>
 		{{/each}}
-		{{#emptyUserList users classReservation.slots}}
+		{{#emptyUserList users classReservation}}
 			<tr>
 				<td>Empty Slot</td>
 				<td>

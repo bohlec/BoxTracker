@@ -18,7 +18,7 @@ define([
 		init: function (element, options) {
 			this.box = options.box;
 			element.html(can.view('view_box', options));
-			this.scheduler = new Scheduler('#signup', {box: this.box});
+			this.scheduler = new Scheduler('#signup', options);
 			// Init page
 			this.updateClock();
 			setInterval(can.proxy(function () { this.updateClock(); }, this), 1000);

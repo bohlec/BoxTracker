@@ -12,10 +12,18 @@ define([
 	'use strict';
 
 	// Mustache helpers
-	window.Mustache.registerHelper('emptyUserList', function (users, slots, options) {
-		window.console.log('inside emptyUserList');
+	window.Mustache.registerHelper('emptyUserList', function (users, klass, options) {
 		var markup = '';
-		for (var i = 0; i < (slots() - users.length); i++) {
+		if (new Date(klass.date_time) > new Date()) {
+			for (var i = 0; i < (klass.slots - users.length); i++) {
+				markup += options.fn();
+			}
+		}
+		return markup;
+	});
+	window.Mustache.registerHelper('isPastClass', function (klass, options) {
+		var markup = '';
+		if (new Date(klass.date_time) <= new Date()) {
 			markup += options.fn();
 		}
 		return markup;
@@ -24,7 +32,6 @@ define([
 		return window.moment(klass.date_time).utc().format('dddd, MMMM Do, YYYY h:mm A');
 	});
 	window.Mustache.registerHelper('isConfirmed', function (user, klass, options) {
-		window.console.log('inside isConfirmed');
 		return (user.getReservation(klass).attr('isConfirmed')) ? options.fn(user): '';
 	});
 	// ----------------------
@@ -35,8 +42,10 @@ define([
 		currentClass: null,
 		currentUsers: null,
 		userSelector: null,
+		selectedUser: null,
 		init: function (element, options) {
 			this.box = options.box;
+			this.selectedUser = options.user;
 			this.element = element;
 			this.currentClass = this.getNextClass();
 			this.showBoxClass(this.currentClass);
@@ -45,11 +54,15 @@ define([
 		'.register.ui-btn click': function (el, ev) {
 			ev.preventDefault();
 			var _this = this;
-			var promise = new can.Deferred();
-			promise.then(function (user) {
-				_this.registerUser(user);
-			});
-			this.userSelector.open(promise);
+			if (this.selectedUser) {
+				this.registerUser(this.selectedUser);
+			} else {
+				var promise = new can.Deferred();
+				promise.then(function (user) {
+					_this.registerUser(user);
+				});
+				this.userSelector.open(promise);
+			}
 		},
 		'.confirm.ui-btn click': function (el, ev) {
 			ev.preventDefault();
@@ -100,7 +113,7 @@ define([
 				}
 			} else {
 				var futureClasses = $.grep(this.box.classes, function (elem) {
-					return (new Date(elem.date_time) <= new Date());
+					return (new Date(elem.date_time) >= new Date());
 				});
 				return futureClasses[0];
 			}

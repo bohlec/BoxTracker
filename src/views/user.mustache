@@ -1,0 +1,32 @@
+<div id="header">
+	{{user.name}}
+</div>
+<div class="user_wrapper">
+	<div id="user_data">
+		<table>
+		<tr>
+			<td>Box:</td>
+			<td>{{user.box.name}}</td>
+		</tr>
+		<tr>
+			<td>Membership Type:</td>
+			<td>{{user.subscriptionType.description}}</td>
+		</tr>
+		</table>
+	</div>
+	<div class="attendance">
+		<p>Attendance Summary:</p>
+		<table border=1 cellpadding=2>
+		<tr>
+			<td>Current Reservations</td>
+			<td>Classes Attended This Week</td>
+			<td>All-time Classes Taken</td>
+		</tr>
+		<tr>
+			<td>{{#futureReservationCount user}}{{/futureReservationCount}}<br><a href="#!box/{{user.box.id}}&user/{{user._id.$oid}}">Make New</a></td>
+			<td></td>
+			<td>{{#pastReservationCount user}}{{/pastReservationCount}}</td>
+		</tr>
+		</table>
+	</div>
+</div>

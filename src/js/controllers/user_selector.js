@@ -23,7 +23,7 @@ define([
 		'.select.ui-btn click': function (el, ev) {
 			window.console.log(ev);
 			ev.preventDefault();
-			User.findOne({_id: el.attr('data-id')}).then(can.proxy(function (user) {
+			User.findOne({id: el.attr('data-id')}).then(can.proxy(function (user) {
 				this.promise.resolve(user);
 				this.remove();
 			}, this));
